@@ -31,7 +31,8 @@ if __name__ == '__main__':
             stored_pass = encode(old_pass)
             print("Your password has been encoded and stored!\n")
         elif user_selection == 2:
-            pass
+            decoded_pass = decode(stored_pass)
+            print(f"The encoded password is {stored_pass}, and the original password is {decoded_pass}\n")
         elif user_selection == 3:
             break
 
