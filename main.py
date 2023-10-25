@@ -1,34 +1,35 @@
-# decodes a password shifiting each digit in the password by 3
-def password_decoder(encoded_password: str) -> str:
-    password = ""
-    for digit in encoded_password:
-        decoded_digit = str((int(digit) - 3) % 10)
-        password += decoded_digit
-    return password
+def encode(old_pass):
+    encoder_val = 3
+    encoded_pass = ''
+    for item in old_pass:
+        new_val = str((int(item) + encoder_val) % 10)
+        encoded_pass += new_val
+    return encoded_pass
 
-# Main function
-if __name__ == "__main__":
 
-    # Menu
-    while True:
+def decode(stored_pass):
+    pass
+
+
+encode_decode = True
+
+if __name__ == '__main__':
+    while encode_decode:
         print("Menu")
         print("-------------")
         print("1. Encode")
         print("2. Decode")
-        print("3. Quit")
-
-        #user input
-        option = input("Enter option: ")
-
-        # Encode
-        if option == "1":
-            password = input("Enter your password to encode: ")
-            encoded_password = password_encoder(password) # call the function
-            print("Your password has been encoded and stored!")
-        # Decode
-        elif option == "2":
-            decoded_password = password_decoder(encoded_password) 
-            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}")
-        # Quit
-        elif option == "3":
+        print("3. Quit\n")
+        user_selection = int(input("Please enter an option: "))
+        if user_selection == 1:
+            old_pass = input("Please enter your password to encode: ")
+            stored_pass = encode(old_pass)
+            print("Your password has been encoded and stored!\n")
+        elif user_selection == 2:
+            pass
+        elif user_selection == 3:
             break
+
+
+
+
