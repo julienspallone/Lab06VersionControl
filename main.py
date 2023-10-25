@@ -7,8 +7,13 @@ def encode(old_pass):
     return encoded_pass
 
 
-def decode(stored_pass):
-    pass
+def decode(encoded_password: str) -> str:
+    decode_val = 3
+    decoded_password = ''
+    for item in encoded_password:
+        decoded_val = str((int(item) - decode_val) % 10)
+        decoded_password += decoded_val
+    return decoded_password
 
 
 encode_decode = True
